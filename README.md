@@ -5,13 +5,14 @@ Docker infrastructure for PostgreSQL and Redis.
 ## Run
 
 ```bash
+docker network create app-network || true
 cp .env.example .env
 docker compose up -d
 ```
 
 ## PostgreSQL
 
-- Host: localhost
+- Host: postgres
 - Port: 5432
 - Database: chatdb
 - User: chatuser
@@ -19,7 +20,7 @@ docker compose up -d
 
 ## Redis
 
-- Host: localhost
+- Host: redis
 - Port: 6379
 - Password: redispass
 

@@ -15,7 +15,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./initdb:/docker-entrypoint-initdb.d
     networks:
-      - baza-network
+      - app-network
 
   redis:
     image: redis:7-alpine
@@ -27,12 +27,12 @@ services:
     volumes:
       - redis_data:/data
     networks:
-      - baza-network
+      - app-network
 
 volumes:
   postgres_data:
   redis_data:
 
 networks:
-  baza-network:
+  app-network:
     driver: bridge
